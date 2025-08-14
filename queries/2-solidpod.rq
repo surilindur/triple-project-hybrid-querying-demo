@@ -1,0 +1,7 @@
+# http://localhost:3000/test/nbn-chist-era-annex-1-chemicals
+
+PREFIX sio: <http://semanticscience.org/resource/>
+
+SELECT ?CAS WHERE {
+  ?s sio:SIO_000300 ?CAS
+}

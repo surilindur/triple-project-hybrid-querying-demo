@@ -1,0 +1,104 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix thd: <urn:triple-hybrid-demo:> .
+<#0> rdfs:label "1,1-Dichloroethene" ;
+    thd:predicate "75-35-4" .
+<#1> rdfs:label "1,1,1-Trichloroethane" ;
+    thd:predicate "71-55-6" .
+<#2> rdfs:label "1,1,2-Trichloroethane" ;
+    thd:predicate "79-00-5" .
+<#3> rdfs:label "1,1,1,2-Tetrachloroethane" ;
+    thd:predicate "630-20-6" .
+<#4> rdfs:label "1,1,2,2-Tetrachloroethane" ;
+    thd:predicate "79-34-5" .
+<#5> rdfs:label "1,2-Dibromoethane (Ethylene dibromide) ((#))" ;
+    thd:predicate "106-93-4" .
+<#6> rdfs:label "1,2-Dichloroethane (ethylene dichloride) ((#))" ;
+    thd:predicate "107-06-2" .
+<#7> rdfs:label "1,3-Dichloropropene (1)  ((+))" ;
+    thd:predicate "542-75-6" .
+<#8> rdfs:label "1,3-Dichloropropene (cis) ((Z)-1,3-dichloropropene)" ;
+    thd:predicate "10061-01-5" .
+<#9> rdfs:label "2-Aminobutane" ;
+    thd:predicate "13952-84-6" .
+<#10> rdfs:label "2-Naphthylamine and its salts ((+))" ;
+    thd:predicate "91-59-8", "553-00-4", "612-52-2" .
+<#11> rdfs:label "2-Naphthyloxyacetic acid ((+))" ;
+    thd:predicate "120-23-0" .
+<#12> rdfs:label "2,4-Dinitrotoluene (2,4-DNT) ((+))" ;
+    thd:predicate "121-14-2" .
+<#13> rdfs:label "2,4,5-T and its salts and esters ((#))" ;
+    thd:predicate "93-76-5" .
+<#14> rdfs:label "3-Decen-2-one ((+))" ;
+    thd:predicate "10519-33-2" .
+<#15> rdfs:label "4-Aminobiphenyl (biphenyl-4-amine) and its salts ((+))" ;
+    thd:predicate "92-67-1", "2113-61-3" .
+<#16> rdfs:label "4-Nitrobiphenyl ((+))" ;
+    thd:predicate "92-93-3" .
+<#17> rdfs:label "4,4'-Diaminodiphenylmethane (MDA) ((+))" ;
+    thd:predicate "101-77-9" .
+<#18> rdfs:label "5-Tert-butyl-2,4,6-trinitro-m-xylene ((+))" ;
+    thd:predicate "81-15-2" .
+<#19> rdfs:label "Acephate ((+))" ;
+    thd:predicate "30560-19-1" .
+<#20> rdfs:label "Acetochlor ((+))" ;
+    thd:predicate "34256-82-1" .
+<#21> rdfs:label "Acifluorfen" ;
+    thd:predicate "50594-66-6" .
+<#22> rdfs:label "Alachlor ((#))" ;
+    thd:predicate "15972-60-8" .
+<#23> rdfs:label "Aldicarb ((#))" ;
+    thd:predicate "116-06-3" .
+<#24> rdfs:label "Ametryn" ;
+    thd:predicate "834-12-8" .
+<#25> rdfs:label "Amitraz ((+))" ;
+    thd:predicate "33089-61-1" .
+<#26> rdfs:label "Amitrole ((+))" ;
+    thd:predicate "61-82-5" .
+<#27> rdfs:label "Anthraquinone ((+))" ;
+    thd:predicate "84-65-1" .
+<#28> rdfs:label "Arsenic compounds" ;
+    thd:predicate " " .
+<#29> rdfs:label "Asbestos Fibres ((+)):" ;
+    thd:predicate "1332-21-4" .
+<#30> rdfs:label "Actinolite ((#))" ;
+    thd:predicate "77536-66-4" .
+<#31> rdfs:label "Antophyllite ((#))" ;
+    thd:predicate "77536-67-5" .
+<#32> rdfs:label "Amosite ((#))" ;
+    thd:predicate "12172-73-5" .
+<#33> rdfs:label "Crocidolite ((#))" ;
+    thd:predicate "12001-28-4" .
+<#34> rdfs:label "Tremolite ((#))" ;
+    thd:predicate "77536-68-6" .
+<#35> rdfs:label "Chrysotile ((+))" ;
+    thd:predicate "12001-29-5", "132207-32-0" .
+<#36> rdfs:label "Asulam ((+))" ;
+    thd:predicate "3337-71-1", "2302-17-2" .
+<#37> rdfs:label "Atrazine ((+))" ;
+    thd:predicate "1912-24-9" .
+<#38> rdfs:label "Azinphos-ethyl ((+))" ;
+    thd:predicate "2642-71-9" .
+<#39> rdfs:label "Azinphos-methyl ((#))" ;
+    thd:predicate "86-50-0" .
+<#40> rdfs:label "Azocyclotin ((+))" ;
+    thd:predicate "41083-11-8" .
+<#41> rdfs:label "Benalaxyl ((+))" ;
+    thd:predicate "71626-11-4" .
+<#42> rdfs:label "Benfuracarb ((+))" ;
+    thd:predicate "82560-54-1" .
+<#43> rdfs:label "Bensultap" ;
+    thd:predicate "17606-31-4" .
+<#44> rdfs:label "Benzene (2)" ;
+    thd:predicate "71-43-2" .
+<#45> rdfs:label "Benzidine and its salts ((+)) Benzidine derivatives ((+))" ;
+    thd:predicate "92-87-5", "36341-27-2" .
+<#46> rdfs:label "Benzyl butyl phthalate ((+))" ;
+    thd:predicate "85-68-7" .
+<#47> rdfs:label "Beta-cyfluthrin ((+))" ;
+    thd:predicate "1820573-27-0" .
+<#48> rdfs:label "Beta-cypermethrin ((+))" ;
+    thd:predicate "65731-84-2" .
+<#49> rdfs:label "Bifenthrin ((+))" ;
+    thd:predicate "82657-04-3" .
+<#50> rdfs:label "Binapacryl ((#))" ;
+    thd:predicate "485-31-4" .

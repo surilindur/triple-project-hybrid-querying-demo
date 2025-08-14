@@ -1,0 +1,6 @@
+{
+  "sources": [
+    "http://127.0.0.1:3000/test/nbn-chist-era-annex-1-chemicals-alt",
+    "https://idsm.elixir-czech.cz/sparql/endpoint/idsm"
+  ]
+}
