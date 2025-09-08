@@ -4,18 +4,19 @@ services:
       context: ./comunica
       network: host
     command: --freshWorker --invalidateCache --httpRetryCount 10 --context /tmp/context.json --port 4000 --timeout 600 --logLevel info
-    network_mode: host
+    ports:
+      - 4000:4000
     volumes:
-      - ./comunica/config.json:/tmp/config.json:ro
+      - ./comunica/config-base.json:/tmp/config.json:ro
+      # - ./comunica/config-void.json:/tmp/config.json:ro
       # - ./comunica/context.json:/tmp/context.json:ro
-      - ./comunica/context-alt.json:/tmp/context.json:ro
+      - ./comunica/context-custom-predicate.json:/tmp/context.json:ro
   solidserver:
     build:
       context: ./solidserver
       network: host
-    command: --config /tmp/config.json --rootFilePath /data --port 3000 --baseUrl http://127.0.0.1:3000/
-    network_mode: host
+    command: --config /tmp/config.json --rootFilePath /data --port 3000 --baseUrl http://solidserver:3000/
     volumes:
       - ./solidserver/config.json:/tmp/config.json:ro
       - ./solidserver/nbn-chist-era-annex-1-chemicals.ttl:/data/test/nbn-chist-era-annex-1-chemicals.ttl:ro
-      - ./solidserver/nbn-chist-era-annex-1-chemicals-alt.ttl:/data/test/nbn-chist-era-annex-1-chemicals-alt.ttl:ro
+      - ./solidserver/nbn-chist-era-annex-1-chemicals-custom-predicate.ttl:/data/test/nbn-chist-era-annex-1-chemicals-custom-predicate.ttl:ro

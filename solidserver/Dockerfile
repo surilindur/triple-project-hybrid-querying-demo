@@ -1,6 +1,6 @@
 FROM node:24-alpine
 
-ADD https://github.com/CommunitySolidServer/CommunitySolidServer.git#ee5a723cd1d782a3077e674652f6d1d964810f15 /opt/solidserver
+ADD https://github.com/CommunitySolidServer/CommunitySolidServer.git#eb09839a2db09e6b236aeebdd5fc525e88393676 /opt/solidserver
 WORKDIR /opt/solidserver
 RUN npm ci
 
