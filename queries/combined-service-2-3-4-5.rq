@@ -5,10 +5,11 @@ PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX vocab: <http://rdf.ncbi.nlm.nih.gov/pubchem/vocabulary#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX rh: <http://rdf.rhea-db.org/>
+PREFIX up: <http://purl.uniprot.org/core/>
 PREFIX sachem: <http://bioinfo.uochb.cas.cz/rdf/v1.0/sachem#>
 PREFIX thd: <urn:triple-hybrid-demo:>
 
-SELECT DISTINCT ?SIMILAR_COMPOUND ?rhea ?equation WHERE {
+SELECT ?uniprot ?mnemo ?rhea ?accession ?equation WHERE {
   # Solid
   ?SOLIDPOD thd:predicate ?CAS .
 
@@ -41,6 +42,17 @@ SELECT DISTINCT ?SIMILAR_COMPOUND ?rhea ?equation WHERE {
   SERVICE <https://sparql.rhea-db.org/sparql> {
     ?rhea rdfs:subClassOf rh:Reaction .
     ?rhea rh:equation ?equation .
+    ?rhea rh:accession ?accession .
     ?rhea rh:side/rh:contains/rh:compound/(rh:chebi|(rh:reactivePart/rh:chebi)|(rh:underlyingChebi/rh:chebi)) ?SIMILAR_COMPOUND .
   }
-} ORDER BY DESC(?SCORE) 
+
+  # Uniprot
+  SERVICE <https://sparql.uniprot.org/sparql> {
+    # GRAPH <http://sparql.uniprot.org/uniprot> {
+    ?uniprot up:reviewed true .
+    ?uniprot up:mnemonic ?mnemo .
+    ?uniprot up:organism ?taxid .
+    ?uniprot up:annotation/up:catalyticActivity/up:catalyzedReaction ?rhea . # where ?rhea comes from query upwards
+    # }
+  }
+} ORDER BY DESC(?SCORE)

@@ -11,32 +11,32 @@ The demo combines data from the following sources:
 | Solid pod with compound labels | https://triple.ilabt.imec.be/test/bio-usecase/nbn-chist-era-annex-1-chemicals.ttl |
 | IDSM SPARQL endpoint           | https://idsm.elixir-czech.cz/sparql/endpoint/idsm                                 |
 | ChEBI SPARQL endpoint          | https://idsm.elixir-czech.cz/sparql/endpoint/chebi                                |
-
-<!--
-| Wikidata SPARQL endpoint       | https://query.wikidata.org/sparql                                                 |
+<!--| Wikidata SPARQL endpoint       | https://query.wikidata.org/sparql                                                 |-->
 | Rhea SPARQL endpoint           | https://sparql.rhea-db.org/sparql                                                 |
 | UniProt SPARQL endpoint        | https://sparql.uniprot.org/sparql                                                 |
 | OMA SPARQL endpoint            | https://sparql.omabrowser.org/sparql                                              |
--->
 
 The demo makes use of Docker Compose, to provide two containers with the following resources:
 
-* `http://127.0.0.1:4000/sparql` as the Comunica SPARQL endpoint that accepts queries.
-* `http://127.0.0.1:3000/test/nbn-chist-era-annex-1-chemicals` as the original demo data, but hosted locally.
-* `http://127.0.0.1:3000/test/nbn-chist-era-annex-1-chemicals-alt` as an alternative demo data with a different predicate.
+* `http://localhost:4000/sparql` as the Comunica SPARQL endpoint that accepts queries.
+* `http://localhost:3000/test/nbn-chist-era-annex-1-chemicals` as the original demo data, but hosted locally.
+* `http://localhost:3000/test/nbn-chist-era-annex-1-chemicals-custom-predicate` as an alternative demo data with a different predicate.
 
-The combined query can be found in [queries/combined-service-2-3-autofed.rq](./queries/combined-service-2-3-autofed.rq).
+The combined queries can be found in:
+
+* `queries/combined-service-2-3-autofed.rq` for Solid + IDSM/ChEBI with client-side federation.
+* `queries/combined-service-2-3-4-5.rq` for Solid + IDSM/ChEBI + Rhea + Uniprot with SERVICE clauses.
+* `queries/combined-service-2-3-4-5-6.rq` for Solid + IDSM/ChEBI + Rhea + Uniprot + OMA with SERVICE clauses (failing at OMA).
 
 ## Performance
 
-Below are some initial performance numbers to provide an estimate of the difference between the test cases.
+Performance with SERVICE clauses, combined queries:
 
-| Test case | real (s) | user (s) | sys (s) | http requests |
-| :-------- | -------: | -------: | ------: | ------------: |
-| base      |    5.340 |    0.003 |   0.007 |             - |
-| VoID      |    6.383 |    0.003 |   0.008 |            24 |
+* Solid + IDSM/ChEBI: ~9s
+* Solid + IDSM/ChEBI + Rhea: ~18s
+* Solid + IDSM/ChEBI + Rhea + Uniprot: ~23s
 
-The base test case fails against the ChEBI endpoint with an internal server error using the base configuration with `COUNT` queries.
+Queries without SERVICE clauses, with all patterns at the top level, keeps executing with no results.
 
 ## Running the demo
 

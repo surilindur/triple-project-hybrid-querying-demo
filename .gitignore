@@ -1,1 +1,3 @@
-query.json
+/*.json
+/*.lock
+/node_modules

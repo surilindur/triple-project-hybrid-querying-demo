@@ -38,9 +38,7 @@ SELECT DISTINCT ?SIMILAR_COMPOUND ?rhea ?equation WHERE {
   }
 
   # Rhea
-  SERVICE <https://sparql.rhea-db.org/sparql> {
-    ?rhea rdfs:subClassOf rh:Reaction .
-    ?rhea rh:equation ?equation .
-    ?rhea rh:side/rh:contains/rh:compound/(rh:chebi|(rh:reactivePart/rh:chebi)|(rh:underlyingChebi/rh:chebi)) ?SIMILAR_COMPOUND .
-  }
-} ORDER BY DESC(?SCORE) 
+  ?rhea rdfs:subClassOf rh:Reaction .
+  ?rhea rh:equation ?equation .
+  ?rhea rh:side/rh:contains/rh:compound/(rh:chebi|(rh:reactivePart/rh:chebi)|(rh:underlyingChebi/rh:chebi)) ?SIMILAR_COMPOUND .
+} ORDER BY DESC(?SCORE)

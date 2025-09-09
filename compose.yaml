@@ -4,18 +4,18 @@ services:
       context: ./comunica
       network: host
     command: --freshWorker --invalidateCache --httpRetryCount 10 --context /tmp/context.json --port 4000 --timeout 600 --logLevel info
-    ports:
-      - 4000:4000
+    network_mode: host
     volumes:
-      - ./comunica/config-base.json:/tmp/config.json:ro
-      # - ./comunica/config-void.json:/tmp/config.json:ro
+      # - ./comunica/config-base.json:/tmp/config.json:ro
+      - ./comunica/config-void.json:/tmp/config.json:ro
       # - ./comunica/context.json:/tmp/context.json:ro
       - ./comunica/context-custom-predicate.json:/tmp/context.json:ro
   solidserver:
     build:
       context: ./solidserver
       network: host
-    command: --config /tmp/config.json --rootFilePath /data --port 3000 --baseUrl http://solidserver:3000/
+    command: --config /tmp/config.json --rootFilePath /data --port 3000 --baseUrl http://localhost:3000/
+    network_mode: host
     volumes:
       - ./solidserver/config.json:/tmp/config.json:ro
       - ./solidserver/nbn-chist-era-annex-1-chemicals.ttl:/data/test/nbn-chist-era-annex-1-chemicals.ttl:ro

@@ -1,6 +1,6 @@
 FROM node:24-alpine
 
-ADD https://github.com/surilindur/comunica.git#5af3ddfefd7efb752a9bb01527b8c4ba67fe7ef4 /opt/comunica
+ADD https://github.com/surilindur/comunica.git#e1f9ac0f2950ab4a5e2b8cbe0eca5e024e65a3b8 /opt/comunica
 WORKDIR /opt/comunica
 RUN yarn install --frozen-lockfile
 WORKDIR /opt/comunica/engines/query-sparql

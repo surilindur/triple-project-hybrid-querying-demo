@@ -99,7 +99,7 @@
       "overrideInstance": { "@id": "urn:comunica:default:optimize-query-operation/actors#prune-empty-source-operations" },
       "overrideParameters": {
         "@type": "ActorOptimizeQueryOperationPruneEmptySourceOperations",
-        "useAskIfSupported": true,
+        "useAskIfSupported": false,
         "beforeActors": [
           { "@id": "urn:comunica:default:optimize-query-operation/actors#filter-pushdown" }
         ]

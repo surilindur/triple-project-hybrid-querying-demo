@@ -1,4 +1,4 @@
-# Combined query across: Solid pod, IDSM
+# Combined query across: Solid pod, IDSM, ChEDBI
 
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX sio: <http://semanticscience.org/resource/>
@@ -6,7 +6,7 @@ PREFIX vocab: <http://rdf.ncbi.nlm.nih.gov/pubchem/vocabulary#>
 PREFIX sachem: <http://bioinfo.uochb.cas.cz/rdf/v1.0/sachem#>
 PREFIX thd: <urn:triple-hybrid-demo:>
 
-SELECT ?CAS ?COMPOUND ?SIMILAR_COMPOUND ?SCORE WHERE {
+SELECT DISTINCT ?CAS ?COMPOUND ?SIMILAR_COMPOUND ?SCORE WHERE {
   ?SOLIDPOD thd:predicate ?CAS .
 
   ?SYNONYM a sio:CHEMINF_000446 . # CAS registry number
@@ -31,5 +31,4 @@ SELECT ?CAS ?COMPOUND ?SIMILAR_COMPOUND ?SCORE WHERE {
       sachem:tautomerMode sachem:inchiTautomers
     ] .
   }
-} LIMIT 1
-# ORDER BY DESC(?SCORE) 
+} ORDER BY DESC(?SCORE)
