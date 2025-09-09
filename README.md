@@ -11,10 +11,11 @@ The demo combines data from the following sources:
 | Solid pod with compound labels | https://triple.ilabt.imec.be/test/bio-usecase/nbn-chist-era-annex-1-chemicals.ttl |
 | IDSM SPARQL endpoint           | https://idsm.elixir-czech.cz/sparql/endpoint/idsm                                 |
 | ChEBI SPARQL endpoint          | https://idsm.elixir-czech.cz/sparql/endpoint/chebi                                |
-<!--| Wikidata SPARQL endpoint       | https://query.wikidata.org/sparql                                                 |-->
 | Rhea SPARQL endpoint           | https://sparql.rhea-db.org/sparql                                                 |
 | UniProt SPARQL endpoint        | https://sparql.uniprot.org/sparql                                                 |
 | OMA SPARQL endpoint            | https://sparql.omabrowser.org/sparql                                              |
+
+<!--| Wikidata SPARQL endpoint       | https://query.wikidata.org/sparql                                                 |-->
 
 The demo makes use of Docker Compose, to provide two containers with the following resources:
 
